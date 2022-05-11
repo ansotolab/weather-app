@@ -6,9 +6,11 @@
         class="image"
       />
       <div style="padding: 14px">
-        <span>Lunes 15</span>
+        <h3>{{ getDay() }}</h3>
         <div class="bottom clearfix">
-          <time class="time">12º / 25ª</time>
+          <span class="min">{{ getMinTemp() }} ºC</span>
+          <span> - </span>
+          <span class="max">{{ getMaxTemp() }} ºC</span>
         </div>
       </div>
     </el-card>
@@ -23,5 +25,30 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 export default class DayWeatherPage extends Vue {
   @Prop({ default: {}, required: true })
   day!: Daily;
+
+  getDay() {
+    const formatDate = new Date(+this.day.dt * 1000);
+    const dayName = formatDate.toLocaleDateString("es-ES", { weekday: "long" });
+
+    return `${dayName} ${formatDate.getDate()}`;
+  }
+
+  getMinTemp() {
+    return this.day.temp.min.toString().replace(".", ",");
+  }
+
+  getMaxTemp() {
+    return this.day.temp.max.toString().replace(".", ",");
+  }
 }
 </script>
+
+<style scoped>
+.min {
+  color: #409eff;
+}
+
+.max {
+  color: #f56c6c;
+}
+</style>
