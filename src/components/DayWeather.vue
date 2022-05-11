@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <el-col :xs="24" :sm="10" :md="5" :lg="3">
-      <el-card :body-style="{ padding: '0px' }" v-if="day">
-        <img
-          :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`"
-          class="image"
-        />
-        <div style="padding: 14px">
-          <span>Lunes 15</span>
-          <div class="bottom clearfix">
-            <time class="time">12º / 25ª</time>
-          </div>
+  <el-col :xs="24" :sm="10" :md="5" :lg="3">
+    <el-card :body-style="{ padding: '0px' }" v-if="day">
+      <img
+        :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`"
+        class="image"
+      />
+      <div style="padding: 14px">
+        <span>Lunes 15</span>
+        <div class="bottom clearfix">
+          <time class="time">12º / 25ª</time>
         </div>
-      </el-card>
-    </el-col>
-  </div>
+      </div>
+    </el-card>
+  </el-col>
 </template>
 
 <script lang="ts">
