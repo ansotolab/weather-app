@@ -32,7 +32,7 @@ import CityResult from "@/components/CityResult.vue";
 @Component({
   components: { CityResult },
 })
-export default class App extends Vue {
+export default class HomePage extends Vue {
   search = { city: "" };
   cities: City[] = json.cities;
   result: City[] = [];
