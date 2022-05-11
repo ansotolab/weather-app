@@ -4,7 +4,7 @@
     <CityResult
       v-for="c in getCities()"
       :key="c.owm_city_id"
-      :name="c.owm_city_name"
+      :city="c"
     ></CityResult>
   </div>
 </template>
@@ -12,8 +12,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import json from "../cities.json";
-import City from "./entities/city";
-import CityResult from "./components/CityResult.vue";
+import City from "@/entities/city";
+import CityResult from "@/components/CityResult.vue";
 
 @Component({
   components: { CityResult },
