@@ -4,6 +4,7 @@ import Element from "element-ui";
 import router from "./core/router";
 import "element-ui/lib/theme-chalk/index.css";
 import "./assets/index.css";
+import "flag-icons/css/flag-icons.css";
 
 Vue.config.productionTip = false;
 
