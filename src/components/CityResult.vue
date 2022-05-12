@@ -14,21 +14,18 @@
         "
       ></el-button>
     </div>
-    <div class="text item">
-      <Flag :isoCode="getISOCode()" />
-      <span>{{ getCountry() }}</span>
-    </div>
+    <CountryAndFlag :isoCode="getISOCode()" :country="getCountry()" />
   </el-card>
 </template>
 
 <script lang="ts">
 import City from "@/entities/city";
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Flag from "./Flag/Flag.vue";
+import CountryAndFlag from "./CountryAndFlag/CountryAndFlag.vue";
 
 @Component({
   components: {
-    Flag,
+    CountryAndFlag,
   },
 })
 export default class CityResult extends Vue {
