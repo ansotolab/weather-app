@@ -2,17 +2,11 @@
   <el-card class="box-card" style="margin-top: 16px">
     <div slot="header" class="clearfix">
       <span style="font-weight: bold">{{ getName() }}</span>
-      <el-button
-        icon="el-icon-right"
-        style="float: right; padding: 5px"
-        circle
-        @click="
-          $router.push({
-            name: 'CityWeather',
-            query: { lat: getLatitude(), lon: getLongitude(), name: getName() },
-          })
-        "
-      ></el-button>
+      <ButtonToCity
+        :latitude="getLatitude()"
+        :longitude="getLongitude()"
+        :name="getName()"
+      />
     </div>
     <CountryAndFlag :isoCode="getISOCode()" :country="getCountry()" />
   </el-card>
@@ -22,9 +16,11 @@
 import City from "@/entities/city";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import CountryAndFlag from "./CountryAndFlag/CountryAndFlag.vue";
+import ButtonToCity from "./ButtonToCity/ButtonToCity.vue";
 
 @Component({
   components: {
+    ButtonToCity,
     CountryAndFlag,
   },
 })
