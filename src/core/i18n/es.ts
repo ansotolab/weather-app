@@ -1,6 +1,6 @@
 export default {
   title: {
     withoutName: "🌤 El tiempo",
-    withName: "🌤 El tiempo {name}",
+    withName: "🌤 El tiempo en {name}",
   },
 };
