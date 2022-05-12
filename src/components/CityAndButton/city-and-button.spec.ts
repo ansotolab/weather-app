@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import CityAndButton from "./CityAndButton.vue";
 
 describe("CityAndButton.vue", () => {
@@ -7,7 +7,7 @@ describe("CityAndButton.vue", () => {
     const longitude = "12";
     const name = "Madrid";
 
-    const wrapper = shallowMount(CityAndButton, {
+    const wrapper = mount(CityAndButton, {
       propsData: { latitude, longitude, name },
     });
 

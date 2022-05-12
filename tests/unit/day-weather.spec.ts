@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import DayWeather from "@/components/DayWeather.vue";
 import { Daily } from "@/entities/oneCallResponse";
 
@@ -45,7 +45,7 @@ describe("DayWeather.vue", () => {
       rain: 0,
     };
 
-    const wrapper = shallowMount(DayWeather, {
+    const wrapper = mount(DayWeather, {
       propsData: { day },
     });
 

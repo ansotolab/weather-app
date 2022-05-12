@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import ButtonToCity from "./ButtonToCity.vue";
 
 describe("ButtonToCity.vue", () => {
@@ -9,7 +9,7 @@ describe("ButtonToCity.vue", () => {
 
     const expectedClass = "el-icon-right";
 
-    const wrapper = shallowMount(ButtonToCity, {
+    const wrapper = mount(ButtonToCity, {
       propsData: { latitude, longitude, name },
     });
 

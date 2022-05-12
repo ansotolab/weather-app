@@ -1,11 +1,11 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import Title from "./Title.vue";
 import i18n from "@/core/i18n";
 import esLocale from "@/core/i18n/es";
 
 describe("Title.vue", () => {
   it("Renders title without name", () => {
-    const wrapper = shallowMount(Title, {
+    const wrapper = mount(Title, {
       i18n,
     });
 
@@ -14,7 +14,7 @@ describe("Title.vue", () => {
 
   it("Renders title with name", () => {
     const city = "Alicante";
-    const wrapper = shallowMount(Title, {
+    const wrapper = mount(Title, {
       i18n,
       propsData: { city },
     });

@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import CityResult from "./CityResult.vue";
 
 describe("CityResult.vue", () => {
@@ -15,7 +15,7 @@ describe("CityResult.vue", () => {
 
     const expectedClass = "box-card";
 
-    const wrapper = shallowMount(CityResult, {
+    const wrapper = mount(CityResult, {
       propsData: { city },
     });
 

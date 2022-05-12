@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import CountryAndFlag from "./CountryAndFlag.vue";
 
 describe("CountryAndFlag.vue", () => {
@@ -6,7 +6,7 @@ describe("CountryAndFlag.vue", () => {
     // Get code with upper and lower letters
     const country = "Spain";
 
-    const wrapper = shallowMount(CountryAndFlag, {
+    const wrapper = mount(CountryAndFlag, {
       propsData: { country: country, isoCode: "" },
     });
 
