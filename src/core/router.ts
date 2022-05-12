@@ -16,6 +16,7 @@ const constantRoutes: Array<RouteConfig> = [
     props: (route) => ({
       latitude: route.query.lat,
       longitude: route.query.lon,
+      name: route.query.name,
     }),
   },
 ];

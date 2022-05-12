@@ -6,7 +6,12 @@
         icon="el-icon-right"
         style="float: right; padding: 5px"
         circle
-        @click="$router.push('/weather')"
+        @click="
+          $router.push({
+            name: 'CityWeather',
+            query: { lat: getLatitude(), lon: getLongitude(), name: getName() },
+          })
+        "
       ></el-button>
     </div>
     <div class="text item">
@@ -30,6 +35,14 @@ export default class CityResult extends Vue {
 
   getCountry(): string {
     return this.city.country_long;
+  }
+
+  getLatitude(): string {
+    return this.city.owm_latitude;
+  }
+
+  getLongitude(): string {
+    return this.city.owm_longitude;
   }
 }
 </script>
