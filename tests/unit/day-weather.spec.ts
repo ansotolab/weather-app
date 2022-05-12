@@ -49,8 +49,6 @@ describe("DayWeather.vue", () => {
       propsData: { day },
     });
 
-    console.log(wrapper.text());
-
     expect(wrapper.text().includes("jueves 12")).toBe(true);
   });
 });
