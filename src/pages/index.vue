@@ -27,7 +27,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import json from "../../cities.json";
 import City from "@/entities/city";
-import CityResult from "@/components/CityResult.vue";
+import CityResult from "@/components/CityResult/CityResult.vue";
 import Title from "@/components/Title/Title.vue";
 
 @Component({

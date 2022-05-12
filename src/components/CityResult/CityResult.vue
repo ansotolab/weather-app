@@ -12,8 +12,8 @@
 <script lang="ts">
 import City from "@/entities/city";
 import { Component, Prop, Vue } from "vue-property-decorator";
-import CountryAndFlag from "./CountryAndFlag/CountryAndFlag.vue";
-import CityAndButton from "./CityAndButton/CityAndButton.vue";
+import CountryAndFlag from "../CountryAndFlag/CountryAndFlag.vue";
+import CityAndButton from "../CityAndButton/CityAndButton.vue";
 
 @Component({
   components: {
