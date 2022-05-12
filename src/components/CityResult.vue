@@ -1,7 +1,7 @@
 <template>
   <el-card class="box-card" style="margin-top: 16px">
     <div slot="header" class="clearfix">
-      <span>{{ getName() }}</span>
+      <span style="font-weight: bold">{{ getName() }}</span>
       <el-button
         icon="el-icon-right"
         style="float: right; padding: 5px"
@@ -15,7 +15,8 @@
       ></el-button>
     </div>
     <div class="text item">
-      {{ getCountry() }}
+      <Flag :isoCode="getISOCode()" />
+      <span>{{ getCountry() }}</span>
     </div>
   </el-card>
 </template>
@@ -23,8 +24,13 @@
 <script lang="ts">
 import City from "@/entities/city";
 import { Component, Prop, Vue } from "vue-property-decorator";
+import Flag from "./Flag.vue";
 
-@Component
+@Component({
+  components: {
+    Flag,
+  },
+})
 export default class CityResult extends Vue {
   @Prop({ required: true })
   city!: City;
@@ -43,6 +49,10 @@ export default class CityResult extends Vue {
 
   getLongitude(): string {
     return this.city.owm_longitude;
+  }
+
+  getISOCode(): string {
+    return this.city.country_short;
   }
 }
 </script>
