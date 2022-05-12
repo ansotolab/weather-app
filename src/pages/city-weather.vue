@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="text-align: center">{{ `🌤 El tiempo de ${name}` }}</h1>
+    <Title :city="name" />
 
     <el-row v-if="!!cityWeather">
       <DayWeather
@@ -16,11 +16,13 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { WeatherResponse } from "@/entities/oneCallResponse";
 import { getWeather } from "@/api/openWeatherAPI";
-import DayWeather from "@/components/DayWeather.vue";
+import DayWeather from "@/components/DayWeather/DayWeather.vue";
+import Title from "@/components/Title/Title.vue";
 
 @Component({
   components: {
     DayWeather,
+    Title,
   },
 })
 export default class CityWeatherPage extends Vue {

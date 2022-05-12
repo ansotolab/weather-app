@@ -1,5 +1,5 @@
-import { shallowMount } from "@vue/test-utils";
-import Flag from "@/components/Flag.vue";
+import { mount } from "@vue/test-utils";
+import Flag from "./Flag.vue";
 
 describe("Flag.vue", () => {
   it("Renders flag when passed", () => {
@@ -7,7 +7,7 @@ describe("Flag.vue", () => {
     const isoCode = "Es";
     const expectedClasses = ["fi", "fi-es", "fis"].toString();
 
-    const wrapper = shallowMount(Flag, {
+    const wrapper = mount(Flag, {
       propsData: { isoCode },
     });
 

@@ -1,21 +1,10 @@
 <template>
   <el-col :xs="24" :sm="10" :md="5" :lg="3">
-    <el-card
-      :body-style="{ padding: '0px' }"
-      style="text-align: center"
-      v-if="day"
-    >
-      <img
-        :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`"
-        class="image"
-      />
-      <div style="padding: 14px">
+    <el-card v-if="day">
+      <img :src="getImgUrl()" class="image" />
+      <div class="card-body">
         <h3>{{ getDay() }}</h3>
-        <div class="bottom clearfix">
-          <span class="min">{{ getMinTemp() }} ºC</span>
-          <span> - </span>
-          <span class="max">{{ getMaxTemp() }} ºC</span>
-        </div>
+        <MinMaxTemp :minTemp="getMaxTemp()" :maxTemp="getMaxTemp()" />
       </div>
     </el-card>
   </el-col>
@@ -24,8 +13,13 @@
 <script lang="ts">
 import { Daily } from "@/entities/oneCallResponse";
 import { Component, Prop, Vue } from "vue-property-decorator";
+import MinMaxTemp from "../MinMaxTemp/MinMaxTemp.vue";
 
-@Component({})
+@Component({
+  components: {
+    MinMaxTemp,
+  },
+})
 export default class DayWeather extends Vue {
   @Prop({ default: {}, required: true })
   day!: Daily;
@@ -44,15 +38,25 @@ export default class DayWeather extends Vue {
   getMaxTemp() {
     return this.day.temp.max.toString().replace(".", ",");
   }
+
+  getImgUrl() {
+    if (this.day.weather) {
+      return `http://openweathermap.org/img/wn/${this.day.weather[0].icon}@2x.png`;
+    } else {
+      return "";
+    }
+  }
 }
 </script>
 
 <style scoped>
-.min {
-  color: #409eff;
+.el-card {
+  padding: 0px;
+  text-align: center;
 }
 
-.max {
-  color: #f56c6c;
+.card-body {
+  padding: 14px;
+  text-transform: capitalize;
 }
 </style>

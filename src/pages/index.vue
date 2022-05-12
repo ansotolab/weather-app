@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="text-align: center">🌤 El tiempo</h1>
+    <Title />
 
     <el-form :inline="true" v-model="search" style="text-align: center">
       <el-form-item>
@@ -27,10 +27,11 @@
 import { Component, Vue } from "vue-property-decorator";
 import json from "../../cities.json";
 import City from "@/entities/city";
-import CityResult from "@/components/CityResult.vue";
+import CityResult from "@/components/CityResult/CityResult.vue";
+import Title from "@/components/Title/Title.vue";
 
 @Component({
-  components: { CityResult },
+  components: { CityResult, Title },
 })
 export default class HomePage extends Vue {
   search = { city: "" };
