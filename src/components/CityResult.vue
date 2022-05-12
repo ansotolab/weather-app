@@ -1,13 +1,10 @@
 <template>
-  <el-card class="box-card" style="margin-top: 16px">
-    <div slot="header" class="clearfix">
-      <span style="font-weight: bold">{{ getName() }}</span>
-      <ButtonToCity
-        :latitude="getLatitude()"
-        :longitude="getLongitude()"
-        :name="getName()"
-      />
-    </div>
+  <el-card class="box-card">
+    <CityAndButton
+      :latitude="getLatitude()"
+      :longitude="getLongitude()"
+      :name="getName()"
+    />
     <CountryAndFlag :isoCode="getISOCode()" :country="getCountry()" />
   </el-card>
 </template>
@@ -16,11 +13,11 @@
 import City from "@/entities/city";
 import { Component, Prop, Vue } from "vue-property-decorator";
 import CountryAndFlag from "./CountryAndFlag/CountryAndFlag.vue";
-import ButtonToCity from "./ButtonToCity/ButtonToCity.vue";
+import CityAndButton from "./CityAndButton/CityAndButton.vue";
 
 @Component({
   components: {
-    ButtonToCity,
+    CityAndButton,
     CountryAndFlag,
   },
 })
@@ -49,3 +46,9 @@ export default class CityResult extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.box-card {
+  margin-top: 16px !important;
+}
+</style>

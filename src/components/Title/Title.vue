@@ -7,7 +7,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class CityResult extends Vue {
+export default class Title extends Vue {
   @Prop({ default: "" })
   city!: string;
 }

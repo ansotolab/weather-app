@@ -15,7 +15,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
-export default class CountryAndFlag extends Vue {
+export default class ButtonToCity extends Vue {
   @Prop({ default: "", required: true })
   latitude!: string;
 
