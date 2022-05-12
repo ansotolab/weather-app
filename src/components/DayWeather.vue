@@ -1,6 +1,10 @@
 <template>
   <el-col :xs="24" :sm="10" :md="5" :lg="3">
-    <el-card :body-style="{ padding: '0px' }" v-if="day">
+    <el-card
+      :body-style="{ padding: '0px' }"
+      style="text-align: center"
+      v-if="day"
+    >
       <img
         :src="`http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`"
         class="image"
@@ -22,7 +26,7 @@ import { Daily } from "@/entities/oneCallResponse";
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component({})
-export default class DayWeatherPage extends Vue {
+export default class DayWeather extends Vue {
   @Prop({ default: {}, required: true })
   day!: Daily;
 
