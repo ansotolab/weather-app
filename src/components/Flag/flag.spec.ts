@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Flag from "@/components/Flag.vue";
+import Flag from "./Flag.vue";
 
 describe("Flag.vue", () => {
   it("Renders flag when passed", () => {
