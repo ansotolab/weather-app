@@ -7,7 +7,7 @@ const constantRoutes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: () => import("@/pages/index.vue"),
+    component: () => import("@/pages/home/home.vue"),
   },
   {
     path: "/weather",
