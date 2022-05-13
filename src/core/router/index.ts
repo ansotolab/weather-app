@@ -12,7 +12,7 @@ const constantRoutes: Array<RouteConfig> = [
   {
     path: "/weather",
     name: "CityWeather",
-    component: () => import("@/pages/city-weather.vue"),
+    component: () => import("@/pages/city-weather/city-weather.vue"),
     props: (route) => ({
       latitude: route.query.lat,
       longitude: route.query.lon,
