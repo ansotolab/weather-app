@@ -4,7 +4,7 @@
       <img :src="getImgUrl()" class="image" />
       <div class="card-body">
         <h3>{{ getDay() }}</h3>
-        <MinMaxTemp :minTemp="getMaxTemp()" :maxTemp="getMaxTemp()" />
+        <MinMaxTemp :minTemp="getMinTemp()" :maxTemp="getMaxTemp()" />
       </div>
     </el-card>
   </el-col>

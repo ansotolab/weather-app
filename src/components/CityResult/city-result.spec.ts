@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import CityResult from "./CityResult.vue";
 
 describe("CityResult.vue", () => {
-  it("Renders country name", () => {
+  it("Renders city result", () => {
     const city = {
       owm_city_id: "3117735",
       owm_city_name: "Madrid",

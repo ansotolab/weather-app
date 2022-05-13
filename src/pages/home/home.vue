@@ -4,7 +4,11 @@
 
     <el-form :inline="true" v-model="search" style="text-align: center">
       <el-form-item>
-        <el-input placeholder="Madrid..." v-model="search.city"></el-input>
+        <el-input
+          placeholder="Madrid..."
+          v-model="search.city"
+          name="city"
+        ></el-input>
       </el-form-item>
       <el-form-item>
         <el-button
@@ -15,7 +19,7 @@
       </el-form-item>
     </el-form>
 
-    <p style="text-align: center">
+    <p id="resultQuantity" style="text-align: center">
       {{ `${result.length} coincidencias.` }}
     </p>
 
@@ -25,7 +29,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import json from "../../cities.json";
+import json from "../../../cities.json";
 import City from "@/entities/city";
 import CityResult from "@/components/CityResult/CityResult.vue";
 import Title from "@/components/Title/Title.vue";

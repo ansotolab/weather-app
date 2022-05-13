@@ -2,7 +2,7 @@ import { mount } from "@vue/test-utils";
 import CityAndButton from "./CityAndButton.vue";
 
 describe("CityAndButton.vue", () => {
-  it("Renders country name", () => {
+  it("Renders city and button", () => {
     const latitude = "12";
     const longitude = "12";
     const name = "Madrid";

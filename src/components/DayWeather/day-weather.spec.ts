@@ -7,7 +7,7 @@ describe("DayWeather.vue", () => {
     const wrapper = mount(DayWeather, {
       propsData: { day: mockDay },
     });
-    console.log(wrapper.html());
+
     expect(wrapper.text().includes("jueves 12")).toBe(true);
   });
 });
