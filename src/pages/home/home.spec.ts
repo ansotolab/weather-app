@@ -3,7 +3,7 @@ import Home from "./home.vue";
 import i18n from "@/core/i18n";
 
 describe("Home.vue", () => {
-  it("Renders title without name", async () => {
+  it("Renders Home page", async () => {
     const wrapper = mount(Home, {
       i18n,
     });
