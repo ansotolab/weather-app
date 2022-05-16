@@ -11,20 +11,26 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Watch } from "vue-property-decorator";
 
 interface ILanguage {
   label: string;
   value: string;
 }
 
-@Component({})
+@Component
 export default class Language extends Vue {
   options: ILanguage[] = [
     { label: "🇪🇸 ES", value: "es" },
     { label: "🇬🇧 EN", value: "en" },
   ];
 
-  selected = "es";
+  selected = this.$store.getters.lang;
+
+  @Watch("selected")
+  onSelectedChange(newValue: string) {
+    this.selected = newValue;
+    this.$store.commit("setLang", newValue);
+  }
 }
 </script>
