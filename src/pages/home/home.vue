@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Language />
     <Title />
 
     <el-form :inline="true" v-model="search" style="text-align: center">
@@ -33,9 +34,10 @@ import json from "../../../cities.json";
 import City from "@/entities/city";
 import CityResult from "@/components/CityResult/CityResult.vue";
 import Title from "@/components/Title/Title.vue";
+import Language from "@/components/Language/Language.vue";
 
 @Component({
-  components: { CityResult, Title },
+  components: { CityResult, Title, Language },
 })
 export default class HomePage extends Vue {
   search = { city: "" };
