@@ -6,10 +6,18 @@ import * as weather from "@/api/openWeatherAPI";
 
 describe("CityWeatherPage.vue", () => {
   it("Renders CityWeatherPage page", () => {
+    // Mock API call
     const spy = jest.spyOn(weather, "getWeather");
     spy.mockResolvedValueOnce(apiResponseMock);
+
+    // Pass props and properties to render all components
     const wrapper = mount(CityWeatherPage, {
       i18n,
+      data() {
+        return {
+          cityWeather: apiResponseMock.data,
+        };
+      },
       propsData: {
         name: "Madrid",
         latitude: "12",
